@@ -21,6 +21,7 @@ class AuthController {
     return res.status(200).json({ token });
   }
 
+  // eslint-disable-next-line consistent-return
   static async getDisconnect(req, res) {
     const token = req.header('X-Token');
     if (!token) return res.status(401).json({ error: 'Unauthorized' });
