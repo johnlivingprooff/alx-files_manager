@@ -17,6 +17,10 @@ class DBClient {
     return this.mongoClient.isConnected();
   }
 
+  getCollection (collection) {
+    return this.db.collection(collection);
+  }
+
   async nbUsers() {
     const usersCollection = this.db.collection('users');
     const numUsers = await usersCollection.countDocuments();
